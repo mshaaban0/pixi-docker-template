@@ -16,7 +16,7 @@ Before you begin, ensure you have the following installed on your system:
 
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
-- [Pixi](https://github.com/prefix-dev/pixi) (for local development without Docker)
+- [Pixi](https://github.com/prefix-dev/pixi) (Optional: for local development without Docker)
 
 ## Getting Started
 
