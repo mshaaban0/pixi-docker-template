@@ -1,0 +1,14 @@
+[project]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "vector-db-tmp"
+platforms = ["osx-arm64", "linux-aarch64"]
+version = "0.1.0"
+
+[tasks]
+start = "flask --app src/main.py run --host=0.0.0.0 --port=5001 --debug --reload --extra-files=watchdog"
+
+[dependencies]
+flask = ">=3.0.3,<4"
+qdrant-client = ">=1.10.1,<2"
+watchdog = ">=4.0.1,<5"
