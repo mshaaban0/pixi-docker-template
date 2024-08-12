@@ -17,8 +17,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5001:5001"
+      - "9999:9999"
     volumes:
       - ./src:/app/src # Mount the src directory
+      - ./notebooks:/app/notebooks # Mount the notebooks directory
     depends_on:
       - qdrant
     environment:
