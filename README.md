@@ -1,6 +1,6 @@
-# Python Project Boilerplate with Pixi and Docker Compose
+# Python Project Boilerplate with Pixi, Flask, Jupyter Notebook, and Docker Compose
 
-This repository provides a boilerplate for new Python projects using Pixi for dependency management and Docker Compose for containerization. It includes a basic Flask application connected to a Qdrant vector database, demonstrating a simple yet scalable project structure.
+This repository provides a boilerplate for new Python projects using Pixi for dependency management and Docker Compose for containerization. It includes a basic Flask application connected to a Qdrant vector database, as well as Jupyter Notebook for interactive development and data exploration.
 
 ## Features
 
@@ -9,6 +9,7 @@ This repository provides a boilerplate for new Python projects using Pixi for de
 - Flask web application with hot-reloading for rapid development
 - Qdrant vector database integration
 - Watchdog for efficient file change detection in Docker
+- Jupyter Notebook for interactive development and data analysis
 
 ## Prerequisites
 
@@ -37,9 +38,11 @@ docker compose up --build
 
 2. Access the Flask application at `http://localhost:5001`
 
-3. Qdrant Dashboard at `http://localhost:6333/dashboard`
+3. Access Jupyter Notebook at `http://localhost:9999` (token is in the terminal output)
 
-4. To stop the containers, press `Ctrl+C` in the terminal or run:
+4. Qdrant Dashboard at `http://localhost:6333/dashboard`
+
+5. To stop the containers, press `Ctrl+C` in the terminal or run:
 
 ```bash
 docker compose down
@@ -59,7 +62,15 @@ pixi install
 pixi run python src/main.py
 ```
 
-3. Access the application at `http://localhost:5001`
+3. Run Jupyter Notebook:
+
+```bash
+pixi run jupyter lab
+```
+
+4. Access the Flask application at `http://localhost:5001`
+
+5. Access Jupyter Notebook at `http://localhost:9999`
 
 ## Project Structure
 
@@ -71,20 +82,25 @@ pixi run python src/main.py
 ├── Dockerfile
 ├── pixi.toml
 ├── README.md
-└── src
-    └── main.py
+├── src
+│   └── main.py
+└── notebooks
+    └── example.ipynb
 ```
 
 ## Configuration
 
 - `pixi.toml`: Manages Python dependencies and project metadata
 - `Dockerfile`: Defines the Docker image for the Python application
-- `docker-compose.yml`: Orchestrates the application and Qdrant services
+- `docker-compose.yml`: Orchestrates the application, Qdrant services, and Jupyter Notebook
 - `src/main.py`: Entry point for the Flask application
+- `notebooks/`: Directory for Jupyter notebooks
 
 ## Development
 
 The project is set up with hot-reloading, allowing you to see changes immediately without restarting the container. Simply edit the files in the `src` directory, and the application will reload automatically.
+
+For data analysis and exploratory work, use Jupyter Notebook. You can create new notebooks in the `notebooks/` directory, which will be persisted even after stopping the Docker containers.
 
 ## Contributing
 
@@ -100,3 +116,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Flask](https://flask.palletsprojects.com/) for the web framework
 - [Qdrant](https://qdrant.tech/) for vector similarity search
 - [Docker](https://www.docker.com/) for containerization
+- [Jupyter](https://jupyter.org/) for interactive computing
