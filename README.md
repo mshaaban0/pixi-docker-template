@@ -59,13 +59,13 @@ pixi install
 2. Run the Flask application:
 
 ```bash
-pixi run python src/main.py
+pixi run start
 ```
 
 3. Run Jupyter Notebook:
 
 ```bash
-pixi run jupyter lab
+pixi run jupyter
 ```
 
 4. Access the Flask application at `http://localhost:5001`
